@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cs6v5scear6ml"]
+
+[ext_resource type="Texture2D" uid="uid://dg7dvhhsqav3" path="res://assets/art/Backgrounds/BG_05.png" id="1_246d8"]
+
+[node name="MainGameLevel" type="Node2D" unique_id=407925075]
+
+[node name="LevelBackground" type="Sprite2D" parent="." unique_id=1917838174]
+scale = Vector2(0.7965686, 0.79656863)
+texture = ExtResource("1_246d8")
+centered = false

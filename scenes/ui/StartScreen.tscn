@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://f33rwyyycmmi"]
 
-[ext_resource type="Texture2D" uid="uid://byyosttoc6lgx" path="res://ASSETS/Art/Backgrounds/BG_03.png" id="1_uijxm"]
-[ext_resource type="Texture2D" uid="uid://cpjqgpx0xvoxj" path="res://ASSETS/Art/GAME TITLE LOGO/Game Title Logo_transp.png" id="2_dkknq"]
+[ext_resource type="Texture2D" uid="uid://cr1cli01kagdr" path="res://ASSETS/Art/Backgrounds/BG_03.png" id="1_uijxm"]
+[ext_resource type="Texture2D" uid="uid://cwm0pofusrpn7" path="res://ASSETS/Art/GAME TITLE LOGO/Game Title Logo_transp.png" id="2_dkknq"]
 
-[node name="StartScreenUI" type="Control" unique_id=1715418598]
+[node name="StartScreen" type="Control" unique_id=1715418598]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
