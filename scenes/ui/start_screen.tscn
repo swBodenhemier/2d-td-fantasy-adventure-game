@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://b6se57kphdu4m"]
 
 [ext_resource type="Script" uid="uid://vh4su0nqu2qd" path="res://scenes/ui/start_screen.gd" id="1_ihgl4"]
-[ext_resource type="Texture2D" uid="uid://cr1cli01kagdr" path="res://ASSETS/Art/Backgrounds/BG_03.png" id="2_kolwf"]
-[ext_resource type="Texture2D" uid="uid://cwm0pofusrpn7" path="res://ASSETS/Art/GAME TITLE LOGO/Game Title Logo_transp.png" id="3_adf7y"]
+[ext_resource type="Texture2D" uid="uid://cr1cli01kagdr" path="res://ASSETS/ART/BACKGROUNDS/BG_03.png" id="2_kolwf"]
+[ext_resource type="Texture2D" uid="uid://cwm0pofusrpn7" path="res://ASSETS/ART/GAME TITLE LOGO/Game Title Logo_transp.png" id="3_adf7y"]
 [ext_resource type="AudioStream" uid="uid://dc0eaghs4xcee" path="res://ASSETS/AUDIO/jorisvermeer-mysterious-fairytale-journey.mp3" id="4_adf7y"]
 [ext_resource type="AudioStream" uid="uid://budpx1dc6iiq0" path="res://ASSETS/AUDIO/Swoosh_SFX.mp3" id="5_a1ei0"]
 [ext_resource type="AudioStream" uid="uid://boj3bf58ks4n0" path="res://ASSETS/AUDIO/Button_Click.mp3" id="6_a1ei0"]
-[ext_resource type="Texture2D" uid="uid://oadeo1tqma72" path="res://ASSETS/Art/PROGRAMMER NAME TEXT/Samuel_Bodenhemier_text.png" id="7_wwlcm"]
-[ext_resource type="Texture2D" uid="uid://b3qotnupkjg74" path="res://ASSETS/Art/PROGRAMMER NAME TEXT/Course_Notation_Text.png" id="8_4dybt"]
+[ext_resource type="Texture2D" uid="uid://oadeo1tqma72" path="res://ASSETS/ART/PROGRAMMER NAME TEXT/Samuel_Bodenhemier_text.png" id="7_wwlcm"]
+[ext_resource type="Texture2D" uid="uid://b3qotnupkjg74" path="res://ASSETS/ART/PROGRAMMER NAME TEXT/Course_Notation_Text.png" id="8_4dybt"]
 
 [sub_resource type="Animation" id="Animation_d4clo"]
 length = 0.001
@@ -150,10 +150,10 @@ stretch_mode = 6
 [node name="TitleLogo" type="TextureRect" parent="." unique_id=1395974072]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5802014
-anchor_top = 0.33648148
-anchor_right = 0.5802014
-anchor_bottom = 0.33648148
+anchor_left = 0.52999383
+anchor_top = 0.27644446
+anchor_right = 0.5299938
+anchor_bottom = 0.27644446
 offset_left = -571.392
 offset_top = -230.04001
 offset_right = 571.608

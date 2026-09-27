@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cs6v5scear6ml"]
 
-[ext_resource type="Texture2D" uid="uid://dg7dvhhsqav3" path="res://assets/art/Backgrounds/BG_05.png" id="1_246d8"]
+[ext_resource type="Texture2D" uid="uid://dg7dvhhsqav3" path="res://ASSETS/ART/BACKGROUNDS/BG_05.png" id="1_246d8"]
 
 [node name="MainGameLevel" type="Node2D" unique_id=407925075]
 
