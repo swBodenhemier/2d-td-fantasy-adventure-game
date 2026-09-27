@@ -42,6 +42,8 @@ func flash_red():
 	tween.tween_property(self, "modulate", Color.WHITE, 0.15)
 
 func play_action_animation(action_name):
+	# The sprite sheet I used doesn't have a hit animation
+	# so instead I am making the sprite flash red on hit
 	if action_name == "hit":
 		flash_red()
 	else:
