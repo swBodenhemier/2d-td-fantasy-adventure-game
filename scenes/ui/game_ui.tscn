@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bhsysbgv6ie10"]
+
+[ext_resource type="Script" uid="uid://ccbmqbuddfeqf" path="res://scenes/ui/player_health_bar.gd" id="2_bma8u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwk6t"]
+bg_color = Color(0.3647059, 0.3647059, 0.3647059, 0.654902)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjfbv"]
+bg_color = Color(0.06031874, 0.7272326, 0, 1)
+
+[node name="GameUI" type="CanvasLayer" unique_id=1187260678]
+
+[node name="Control" type="Control" parent="." unique_id=1813506760]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 60.0
+offset_bottom = 50.0
+
+[node name="PlayerHealthBar" type="ProgressBar" parent="Control" unique_id=139123469]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 24.0
+theme_override_styles/background = SubResource("StyleBoxFlat_gwk6t")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xjfbv")
+show_percentage = false
+script = ExtResource("2_bma8u")

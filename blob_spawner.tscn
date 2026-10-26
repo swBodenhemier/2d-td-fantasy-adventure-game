@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://3m57s1ut1yu2"]
+
+[ext_resource type="Script" uid="uid://fwt54luh7bkx" path="res://blob_spawner.gd" id="1_thpan"]
+[ext_resource type="PackedScene" uid="uid://bt2k623387g8h" path="res://scenes/blob_monster.tscn" id="2_c81up"]
+
+[node name="BlobSpawner" type="Node2D" unique_id=965739837]
+script = ExtResource("1_thpan")
+blob_scene = ExtResource("2_c81up")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1334246237]
+
+[node name="SpawnPoint1" type="Marker2D" parent="." unique_id=362223299]
+position = Vector2(400, 0)
+
+[node name="SpawnPoint2" type="Marker2D" parent="." unique_id=378278900]
+position = Vector2(0, 200)
+
+[node name="SpawnPoint3" type="Marker2D" parent="." unique_id=849137394]
+position = Vector2(-400, 0)
+
+[node name="SpawnPoint4" type="Marker2D" parent="." unique_id=1985187020]
+position = Vector2(0, -200)

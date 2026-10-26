@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://0cpbdid77d6c" path="res://ASSETS/ART/PLAYER/Player.png" id="1_dovo2"]
 [ext_resource type="Script" uid="uid://bah6mmqeyyb8t" path="res://scenes/player/player.gd" id="1_gmlin"]
 [ext_resource type="Texture2D" uid="uid://bdfxgsxqmkduy" path="res://ASSETS/ART/PLAYER/Player_Mirrored.png" id="2_gmlin"]
+[ext_resource type="Script" uid="uid://bf30rsiv3ktjk" path="res://hurtbox.gd" id="4_lvxji"]
+[ext_resource type="Script" uid="uid://ducldktschn40" path="res://hitbox.gd" id="5_p47bc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5q8fn"]
 atlas = ExtResource("1_dovo2")
@@ -67,6 +69,22 @@ region = Rect2(64, 256, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_8qxvo"]
 atlas = ExtResource("1_dovo2")
 region = Rect2(96, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trum3"]
+atlas = ExtResource("1_dovo2")
+region = Rect2(96, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkc6f"]
+atlas = ExtResource("2_gmlin")
+region = Rect2(64, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21yht"]
+atlas = ExtResource("1_dovo2")
+region = Rect2(96, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4b1ex"]
+atlas = ExtResource("2_gmlin")
+region = Rect2(64, 288, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2wy34"]
 atlas = ExtResource("1_dovo2")
@@ -396,6 +414,38 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_trum3")
+}],
+"loop": 1,
+"name": &"dead_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkc6f")
+}],
+"loop": 1,
+"name": &"dead_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21yht")
+}],
+"loop": 1,
+"name": &"dead_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4b1ex")
+}],
+"loop": 1,
+"name": &"dead_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_2wy34")
 }, {
 "duration": 1.0,
@@ -650,17 +700,45 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37oug"]
 size = Vector2(11, 18)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xnlj0"]
+radius = 8.0
+height = 21.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnlj0"]
+size = Vector2(40, 24.5)
+
 [node name="Player" type="CharacterBody2D" unique_id=435346633]
 scale = Vector2(2, 2)
+collision_layer = 2
+collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_gmlin")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2074747252]
 sprite_frames = SubResource("SpriteFrames_xnlj0")
-animation = &"die_down"
+animation = &"idle_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=428068937]
 position = Vector2(-0.5, -2)
 shape = SubResource("RectangleShape2D_37oug")
 
+[node name="PlayerHurtBox" type="Area2D" parent="." unique_id=1552138543]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_lvxji")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHurtBox" unique_id=928034709]
+shape = SubResource("CapsuleShape2D_xnlj0")
+
+[node name="PlayerHitBox" type="Area2D" parent="." unique_id=374209339]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("5_p47bc")
+triggered = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitBox" unique_id=588295669]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_xnlj0")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="PlayerHurtBox" to="PlayerHurtBox" method="_on_area_entered"]

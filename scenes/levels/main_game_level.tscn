@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://cs6v5scear6ml"]
 
 [ext_resource type="Texture2D" uid="uid://dg7dvhhsqav3" path="res://ASSETS/ART/BACKGROUNDS/BG_05.png" id="1_246d8"]
+[ext_resource type="PackedScene" uid="uid://bhsysbgv6ie10" path="res://scenes/ui/game_ui.tscn" id="2_l06gb"]
+[ext_resource type="PackedScene" uid="uid://dg8s0mr0uyamx" path="res://scenes/player/player.tscn" id="3_ys2ra"]
+[ext_resource type="PackedScene" uid="uid://3m57s1ut1yu2" path="res://blob_spawner.tscn" id="4_ys2ra"]
 
 [node name="MainGameLevel" type="Node2D" unique_id=407925075]
 
@@ -8,3 +11,11 @@
 scale = Vector2(0.7965686, 0.79656863)
 texture = ExtResource("1_246d8")
 centered = false
+
+[node name="GameUI" parent="." unique_id=1187260678 instance=ExtResource("2_l06gb")]
+
+[node name="Player" parent="." unique_id=435346633 groups=["Player"] instance=ExtResource("3_ys2ra")]
+position = Vector2(186, 357)
+
+[node name="BlobSpawner" parent="." unique_id=965739837 instance=ExtResource("4_ys2ra")]
+position = Vector2(561, 328)
