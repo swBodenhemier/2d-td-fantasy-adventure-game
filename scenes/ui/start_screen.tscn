@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://b6se57kphdu4m"]
 
-[ext_resource type="Script" uid="uid://vh4su0nqu2qd" path="res://scenes/ui/start_screen.gd" id="1_ihgl4"]
+[ext_resource type="Script" uid="uid://bidfv24hicvpo" path="res://SCENES/UI/start_screen.gd" id="1_ihgl4"]
 [ext_resource type="Texture2D" uid="uid://cr1cli01kagdr" path="res://ASSETS/ART/BACKGROUNDS/BG_03.png" id="2_kolwf"]
 [ext_resource type="Texture2D" uid="uid://cwm0pofusrpn7" path="res://ASSETS/ART/GAME TITLE LOGO/Game Title Logo_transp.png" id="3_adf7y"]
 [ext_resource type="AudioStream" uid="uid://dc0eaghs4xcee" path="res://ASSETS/AUDIO/jorisvermeer-mysterious-fairytale-journey.mp3" id="4_adf7y"]
 [ext_resource type="AudioStream" uid="uid://budpx1dc6iiq0" path="res://ASSETS/AUDIO/Swoosh_SFX.mp3" id="5_a1ei0"]
 [ext_resource type="AudioStream" uid="uid://boj3bf58ks4n0" path="res://ASSETS/AUDIO/Button_Click.mp3" id="6_a1ei0"]
-[ext_resource type="Texture2D" uid="uid://oadeo1tqma72" path="res://ASSETS/ART/PROGRAMMER NAME TEXT/Samuel_Bodenhemier_text.png" id="7_wwlcm"]
 [ext_resource type="Texture2D" uid="uid://b3qotnupkjg74" path="res://ASSETS/ART/PROGRAMMER NAME TEXT/Course_Notation_Text.png" id="8_4dybt"]
 
 [sub_resource type="Animation" id="Animation_d4clo"]
@@ -150,7 +149,7 @@ stretch_mode = 6
 [node name="TitleLogo" type="TextureRect" parent="." unique_id=1395974072]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.52999383
+anchor_left = 0.5299938
 anchor_top = 0.27644446
 anchor_right = 0.5299938
 anchor_bottom = 0.27644446
@@ -218,19 +217,10 @@ layout_mode = 0
 offset_left = 421.0
 offset_top = 800.0
 offset_right = 901.0
-offset_bottom = 960.0006
+offset_bottom = 850.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 color = Color(1, 1, 1, 0.5686275)
-
-[node name="TextureRect2" type="TextureRect" parent="ProgrammerCard" unique_id=1941533686]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 31.0
-offset_right = 781.0
-offset_bottom = 254.0
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("7_wwlcm")
 
 [node name="TextureRect" type="TextureRect" parent="ProgrammerCard" unique_id=429479695]
 layout_mode = 0

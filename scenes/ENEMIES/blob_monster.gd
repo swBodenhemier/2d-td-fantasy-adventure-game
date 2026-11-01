@@ -123,7 +123,7 @@ func _on_hit_landed(_target: Node2D) -> void:
 	if state == State.CHASE:
 		_chase_timer = give_up_time
 
-func take_damage(amount: int) -> void:
+func take_damage(hitbox: Hitbox) -> void:
 	die()
 
 func die() -> void:

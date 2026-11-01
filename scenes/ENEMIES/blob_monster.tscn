@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bt2k623387g8h"]
 
+[ext_resource type="Script" uid="uid://bd8yp5jar8qxt" path="res://SCENES/ENEMIES/blob_monster.gd" id="1_3ign5"]
 [ext_resource type="Texture2D" uid="uid://dkr8r0bbfguhb" path="res://ASSETS/ART/CHARACTER AND CREATURE SPRITES/Slime_Blue.png" id="1_bcgfb"]
-[ext_resource type="Script" uid="uid://bd8yp5jar8qxt" path="res://scenes/blob_monster.gd" id="1_qnulv"]
-[ext_resource type="Script" uid="uid://ducldktschn40" path="res://hitbox.gd" id="2_qnulv"]
-[ext_resource type="Script" uid="uid://bf30rsiv3ktjk" path="res://hurtbox.gd" id="4_od4fa"]
+[ext_resource type="Script" uid="uid://ducldktschn40" path="res://CLASSES/hitbox.gd" id="3_i0ixg"]
+[ext_resource type="Script" uid="uid://bf30rsiv3ktjk" path="res://CLASSES/hurtbox.gd" id="4_a05cx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_od4fa"]
 atlas = ExtResource("1_bcgfb")
@@ -124,7 +124,7 @@ size = Vector2(30, 20)
 [node name="BlobMonster" type="CharacterBody2D" unique_id=641095474]
 collision_layer = 4
 motion_mode = 1
-script = ExtResource("1_qnulv")
+script = ExtResource("1_3ign5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=89327072]
 position = Vector2(16, 8)
@@ -149,8 +149,7 @@ shape = SubResource("CircleShape2D_6125e")
 position = Vector2(16, 12)
 collision_layer = 0
 collision_mask = 2
-script = ExtResource("2_qnulv")
-knockback_force = 200.0
+script = ExtResource("3_i0ixg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlobHitbox" unique_id=964708861]
 position = Vector2(0, 2)
@@ -161,7 +160,7 @@ shape = SubResource("RectangleShape2D_ukt4u")
 [node name="BlobHurtbox" type="Area2D" parent="." unique_id=1493781718]
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("4_od4fa")
+script = ExtResource("4_a05cx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlobHurtbox" unique_id=466498045]
 position = Vector2(16, 11)

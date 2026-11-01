@@ -110,10 +110,8 @@ func die():
 	play_action_animation("die")
 
 func _unhandled_input(event):
-	if event.is_action_pressed("attack"):
+	if event.is_action_pressed("attack") and current_health > 0:
 		attack()
-	elif event.is_action_pressed("test_die"):
-		die()
 
 func attack():
 	play_action_animation("attack")
