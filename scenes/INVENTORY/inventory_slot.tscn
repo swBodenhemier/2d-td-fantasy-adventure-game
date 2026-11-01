@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dvhl6skqkf6jq"]
+
+[ext_resource type="Script" uid="uid://box03bijspmeu" path="res://SCENES/INVENTORY/inventory_slot.gd" id="1_jjibe"]
+
+[node name="InventorySlot" type="TextureButton" unique_id=978835586]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_jjibe")
+
+[node name="ItemIcon" type="TextureRect" parent="." unique_id=43385534]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Count" type="Label" parent="." unique_id=122932182]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

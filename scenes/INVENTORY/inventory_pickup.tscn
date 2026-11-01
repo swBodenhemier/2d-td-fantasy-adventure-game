@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cku2gafkk8b33"]
+
+[ext_resource type="Script" uid="uid://24u8mk1y6lfo" path="res://SCENES/INVENTORY/inventory_pickup.gd" id="1_hjms1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xnlj0"]
+
+[node name="InventoryPickup" type="Area2D" unique_id=1752930476]
+script = ExtResource("1_hjms1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=588268459]
+shape = SubResource("CircleShape2D_xnlj0")
