@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://45yqqjsqm8lr"
-path="res://.godot/imported/enemies-skeleton1_movement.png-df38d7d2061cee5b58dc2b041bfe52b8.ctex"
+path="res://.godot/imported/enemies-skeleton1_movement.png-386aa9cca617e6f4023df032a8111a73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/ART/CHARACTER AND CREATURE SPRITES/enemies-skeleton1_movement.png"
-dest_files=["res://.godot/imported/enemies-skeleton1_movement.png-df38d7d2061cee5b58dc2b041bfe52b8.ctex"]
+source_file="res://ASSETS/Art/CHARACTER AND CREATURE SPRITES/enemies-skeleton1_movement.png"
+dest_files=["res://.godot/imported/enemies-skeleton1_movement.png-386aa9cca617e6f4023df032a8111a73.ctex"]
 
 [params]
 
