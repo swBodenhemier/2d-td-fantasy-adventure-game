@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3qotnupkjg74"
-path="res://.godot/imported/Course_Notation_Text.png-0de29f8abacad5116cd34bbc303384ad.ctex"
+path="res://.godot/imported/Course_Notation_Text.png-33a5b9d2766ec4052c30834214028701.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/ART/PROGRAMMER NAME TEXT/Course_Notation_Text.png"
-dest_files=["res://.godot/imported/Course_Notation_Text.png-0de29f8abacad5116cd34bbc303384ad.ctex"]
+source_file="res://ASSETS/Art/PROGRAMMER NAME TEXT/Course_Notation_Text.png"
+dest_files=["res://.godot/imported/Course_Notation_Text.png-33a5b9d2766ec4052c30834214028701.ctex"]
 
 [params]
 
