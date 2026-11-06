@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://dvhl6skqkf6jq"]
 
-[ext_resource type="Script" uid="uid://box03bijspmeu" path="res://SCENES/INVENTORY/inventory_slot.gd" id="1_jjibe"]
+[ext_resource type="Script" uid="uid://box03bijspmeu" path="res://scenes/INVENTORY/inventory_slot.gd" id="1_jjibe"]
+[ext_resource type="Texture2D" uid="uid://bv5mc755wgylq" path="res://ASSETS/Art/UI/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thick outline/tile_0000.png" id="1_n053d"]
 
 [node name="InventorySlot" type="TextureButton" unique_id=978835586]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 32.0
+offset_bottom = 32.0
+texture_normal = ExtResource("1_n053d")
+stretch_mode = 5
 script = ExtResource("1_jjibe")
 
 [node name="ItemIcon" type="TextureRect" parent="." unique_id=43385534]
