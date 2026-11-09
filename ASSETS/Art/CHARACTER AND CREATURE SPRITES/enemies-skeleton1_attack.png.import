@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1ihgvya8iurd"
-path="res://.godot/imported/enemies-skeleton1_attack.png-a7826182d5d3a7ae449bfc18ec1659fc.ctex"
+path="res://.godot/imported/enemies-skeleton1_attack.png-dd722f94fdb8a8e3cc112aa45869789b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/ART/CHARACTER AND CREATURE SPRITES/enemies-skeleton1_attack.png"
-dest_files=["res://.godot/imported/enemies-skeleton1_attack.png-a7826182d5d3a7ae449bfc18ec1659fc.ctex"]
+source_file="res://ASSETS/Art/CHARACTER AND CREATURE SPRITES/enemies-skeleton1_attack.png"
+dest_files=["res://.godot/imported/enemies-skeleton1_attack.png-dd722f94fdb8a8e3cc112aa45869789b.ctex"]
 
 [params]
 

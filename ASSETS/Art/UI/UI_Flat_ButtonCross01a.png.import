@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dx6hxdved55ql"
-path="res://.godot/imported/UI_Flat_ButtonCross01a.png-ebddc4c69466f710622d4c3f25bc9ebe.ctex"
+path="res://.godot/imported/UI_Flat_ButtonCross01a.png-0d4017a2f379cb324ac636748c23d517.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/ART/UI/UI_Flat_ButtonCross01a.png"
-dest_files=["res://.godot/imported/UI_Flat_ButtonCross01a.png-ebddc4c69466f710622d4c3f25bc9ebe.ctex"]
+source_file="res://ASSETS/Art/UI/UI_Flat_ButtonCross01a.png"
+dest_files=["res://.godot/imported/UI_Flat_ButtonCross01a.png-0d4017a2f379cb324ac636748c23d517.ctex"]
 
 [params]
 
