@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brislqynjarvt"
-path="res://.godot/imported/Preview.png-e42f9f4f2cc9cbbadfd37978e6daf9fc.ctex"
+path="res://.godot/imported/Preview.png-2b8455e805ab1fda68b9627cff2bdd2f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/Art/UI/kenney_ui-pack-pixel-adventure/Preview.png"
-dest_files=["res://.godot/imported/Preview.png-e42f9f4f2cc9cbbadfd37978e6daf9fc.ctex"]
+source_file="res://ASSETS/ART/UI/kenney_ui-pack-pixel-adventure/Preview.png"
+dest_files=["res://.godot/imported/Preview.png-2b8455e805ab1fda68b9627cff2bdd2f.ctex"]
 
 [params]
 
