@@ -1,13 +1,20 @@
 [gd_scene format=3 uid="uid://dvhl6skqkf6jq"]
 
-[ext_resource type="Script" uid="uid://box03bijspmeu" path="res://scenes/INVENTORY/inventory_slot.gd" id="1_jjibe"]
-[ext_resource type="Texture2D" uid="uid://bv5mc755wgylq" path="res://ASSETS/Art/UI/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thick outline/tile_0000.png" id="1_n053d"]
+[ext_resource type="Texture2D" uid="uid://brkt4up6ix3yy" path="res://ASSETS/ART/UI/UI_Flat_FrameSlot01a.png" id="1_c53gs"]
+[ext_resource type="Script" uid="uid://box03bijspmeu" path="res://SCENES/INVENTORY/inventory_slot.gd" id="1_jjibe"]
+[ext_resource type="Texture2D" uid="uid://7wl23hi7pqbo" path="res://ASSETS/ART/UI/UI_Flat_FrameSlot01b_hovered.png" id="2_m8ugb"]
+[ext_resource type="Texture2D" uid="uid://badq88djbusje" path="res://ASSETS/ART/UI/UI_Flat_FrameSlot01a_Hovered.png" id="3_1qv4y"]
+[ext_resource type="Texture2D" uid="uid://doackmhvkdekr" path="res://ASSETS/ART/UI/UI_Flat_FrameSlot01c.png" id="3_nm7e4"]
 
 [node name="InventorySlot" type="TextureButton" unique_id=978835586]
-offset_right = 32.0
-offset_bottom = 32.0
-texture_normal = ExtResource("1_n053d")
-stretch_mode = 5
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_behavior_recursive = 2
+texture_normal = ExtResource("1_c53gs")
+texture_pressed = ExtResource("2_m8ugb")
+texture_hover = ExtResource("3_1qv4y")
+texture_disabled = ExtResource("3_nm7e4")
+texture_focused = ExtResource("3_1qv4y")
 script = ExtResource("1_jjibe")
 
 [node name="ItemIcon" type="TextureRect" parent="." unique_id=43385534]
