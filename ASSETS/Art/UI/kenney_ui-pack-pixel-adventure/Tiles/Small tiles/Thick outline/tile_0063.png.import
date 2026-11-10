@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6qj6hnhqajpn"
-path="res://.godot/imported/tile_0063.png-f0805a7c27d79e9b93f23190c53188d9.ctex"
+path="res://.godot/imported/tile_0063.png-c762403635f64d142c0820b564cde8cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/Art/UI/kenney_ui-pack-pixel-adventure/Tiles/Small tiles/Thick outline/tile_0063.png"
-dest_files=["res://.godot/imported/tile_0063.png-f0805a7c27d79e9b93f23190c53188d9.ctex"]
+source_file="res://ASSETS/ART/UI/kenney_ui-pack-pixel-adventure/Tiles/Small tiles/Thick outline/tile_0063.png"
+dest_files=["res://.godot/imported/tile_0063.png-c762403635f64d142c0820b564cde8cd.ctex"]
 
 [params]
 

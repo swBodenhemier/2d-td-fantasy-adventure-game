@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkr8r0bbfguhb"
-path="res://.godot/imported/Slime_Blue.png-76529ad2b7e657daaad9361a9e0435ed.ctex"
+path="res://.godot/imported/Slime_Blue.png-8ca38a3035a2023e9be8fcf928e18aaa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/Art/CHARACTER AND CREATURE SPRITES/Slime_Blue.png"
-dest_files=["res://.godot/imported/Slime_Blue.png-76529ad2b7e657daaad9361a9e0435ed.ctex"]
+source_file="res://ASSETS/ART/CHARACTER AND CREATURE SPRITES/Slime_Blue.png"
+dest_files=["res://.godot/imported/Slime_Blue.png-8ca38a3035a2023e9be8fcf928e18aaa.ctex"]
 
 [params]
 

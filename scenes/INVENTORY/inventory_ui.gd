@@ -7,7 +7,7 @@ var slot_grid: GridContainer
 var slots: Array[TextureButton] = []
 
 func _ready() -> void:
-	slot_grid = $Panel/SlotGrid
+	slot_grid = $Panel/InventoryContainer/SlotGrid
 	_populate_inventory_slots()
 	print(slot_grid.get_children())
 

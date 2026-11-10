@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dg8s0mr0uyamx"]
 
+[ext_resource type="Script" uid="uid://by4mc1bbe1tab" path="res://SCENES/PLAYER/player.gd" id="1_1ivef"]
 [ext_resource type="Texture2D" uid="uid://0cpbdid77d6c" path="res://ASSETS/ART/PLAYER/Player.png" id="1_dovo2"]
-[ext_resource type="Script" uid="uid://bah6mmqeyyb8t" path="res://scenes/player/player.gd" id="1_gmlin"]
 [ext_resource type="Texture2D" uid="uid://bdfxgsxqmkduy" path="res://ASSETS/ART/PLAYER/Player_Mirrored.png" id="2_gmlin"]
-[ext_resource type="Script" uid="uid://bf30rsiv3ktjk" path="res://hurtbox.gd" id="4_lvxji"]
-[ext_resource type="Script" uid="uid://ducldktschn40" path="res://hitbox.gd" id="5_p47bc"]
+[ext_resource type="Script" uid="uid://bf30rsiv3ktjk" path="res://CLASSES/hurtbox.gd" id="4_lvxji"]
+[ext_resource type="Script" uid="uid://ducldktschn40" path="res://CLASSES/hitbox.gd" id="5_p47bc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5q8fn"]
 atlas = ExtResource("1_dovo2")
@@ -712,7 +712,7 @@ scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 0
 motion_mode = 1
-script = ExtResource("1_gmlin")
+script = ExtResource("1_1ivef")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2074747252]
 sprite_frames = SubResource("SpriteFrames_xnlj0")

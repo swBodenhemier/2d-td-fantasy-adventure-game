@@ -52,18 +52,18 @@ func _physics_process(delta: float) -> void:
 	global_position.x = clamp(global_position.x, 0, screen_size.x)
 	global_position.y = clamp(global_position.y, 0, screen_size.y)
 	
-func take_damage(hitbox: Hitbox):
+func take_damage(attacker: Hitbox):
 	if current_health <= 0:
 		return
 	
-	var amount = hitbox.damage
+	var amount = attacker.damage
 	play_action_animation("hit")
 	current_health = clampi(current_health - amount, 0, max_health)
 	health_changed.emit(current_health, max_health)
 	if current_health <= 0:
 		die()
 	else:
-		apply_knockback(hitbox.global_position, hitbox.knockback_force)
+		apply_knockback(attacker.global_position, attacker.knockback_force)
 
 func apply_knockback(source_position: Vector2, force: float):
 	var knockback_direction = (global_position - source_position).normalized()

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdfxgsxqmkduy"
-path="res://.godot/imported/Player_Mirrored.png-0ffead87ed589bb3d0a50115f0b5b378.ctex"
+path="res://.godot/imported/Player_Mirrored.png-db7bf3327f8a04d6a339eb478415d0d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/Art/PLAYER/Player_Mirrored.png"
-dest_files=["res://.godot/imported/Player_Mirrored.png-0ffead87ed589bb3d0a50115f0b5b378.ctex"]
+source_file="res://ASSETS/ART/PLAYER/Player_Mirrored.png"
+dest_files=["res://.godot/imported/Player_Mirrored.png-db7bf3327f8a04d6a339eb478415d0d3.ctex"]
 
 [params]
 
