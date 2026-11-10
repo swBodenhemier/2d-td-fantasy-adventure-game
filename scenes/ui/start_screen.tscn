@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b6se57kphdu4m"]
 
-[ext_resource type="Script" uid="uid://bidfv24hicvpo" path="res://scenes/ui/start_screen.gd" id="1_ihgl4"]
+[ext_resource type="Script" uid="uid://bidfv24hicvpo" path="res://SCENES/UI/start_screen.gd" id="1_ihgl4"]
 [ext_resource type="Texture2D" uid="uid://cr1cli01kagdr" path="res://ASSETS/ART/Backgrounds/BG_03.png" id="2_kolwf"]
 [ext_resource type="Texture2D" uid="uid://cwm0pofusrpn7" path="res://ASSETS/ART/GAME TITLE LOGO/Game Title Logo_transp.png" id="3_adf7y"]
 [ext_resource type="AudioStream" uid="uid://dc0eaghs4xcee" path="res://ASSETS/AUDIO/jorisvermeer-mysterious-fairytale-journey.mp3" id="4_adf7y"]
