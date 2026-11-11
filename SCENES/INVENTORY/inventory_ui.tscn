@@ -2,38 +2,44 @@
 
 [ext_resource type="Script" uid="uid://y4yhvejtdks0" path="res://SCENES/INVENTORY/inventory_ui.gd" id="1_kdc41"]
 [ext_resource type="PackedScene" uid="uid://dvhl6skqkf6jq" path="res://SCENES/INVENTORY/inventory_slot.tscn" id="2_b5lxb"]
-[ext_resource type="Texture2D" uid="uid://doackmhvkdekr" path="res://ASSETS/ART/UI/UI_Flat_FrameSlot01c.png" id="3_1j1uo"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1j1uo"]
-texture = ExtResource("3_1j1uo")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
+[ext_resource type="Texture2D" uid="uid://bnwab4x74kgwn" path="res://ASSETS/ART/UI/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thick outline/tile_0030.png" id="4_kugwh"]
 
 [node name="InventoryUI" type="CanvasLayer" unique_id=1682690053]
 script = ExtResource("1_kdc41")
 slot_scene = ExtResource("2_b5lxb")
 
-[node name="Panel" type="PanelContainer" parent="." unique_id=1252318784]
+[node name="Panel" type="NinePatchRect" parent="." unique_id=1626402545]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -81.5
+offset_top = -95.375
+offset_right = 81.5
+offset_bottom = 95.375
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 0
-mouse_filter = 2
-mouse_behavior_recursive = 1
-theme_override_styles/panel = SubResource("StyleBoxTexture_1j1uo")
+texture = ExtResource("4_kugwh")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
 
 [node name="InventoryContainer" type="VBoxContainer" parent="Panel" unique_id=12245341]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -25.5
+offset_right = 43.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 20
 
 [node name="SlotGrid" type="GridContainer" parent="Panel/InventoryContainer" unique_id=440583583]
