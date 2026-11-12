@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://y4yhvejtdks0" path="res://SCENES/INVENTORY/inventory_ui.gd" id="1_kdc41"]
 [ext_resource type="PackedScene" uid="uid://dvhl6skqkf6jq" path="res://SCENES/INVENTORY/inventory_slot.tscn" id="2_b5lxb"]
 [ext_resource type="Texture2D" uid="uid://bnwab4x74kgwn" path="res://ASSETS/ART/UI/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thick outline/tile_0030.png" id="4_kugwh"]
+[ext_resource type="Script" uid="uid://cwv4u4lxrmxaa" path="res://SCENES/INVENTORY/drop_button.gd" id="4_wmvpq"]
 
 [node name="InventoryUI" type="CanvasLayer" unique_id=1682690053]
 script = ExtResource("1_kdc41")
@@ -53,3 +54,4 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "Drop Item"
+script = ExtResource("4_wmvpq")
