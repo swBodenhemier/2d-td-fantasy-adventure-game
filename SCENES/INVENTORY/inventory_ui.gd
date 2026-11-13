@@ -9,11 +9,12 @@ var slot_fill_array: Array[int] = []
 var items_array: Array[Dictionary] = []
 var placed =  false
 var number_slots = 12
+var inventory_pickup: InventoryPickup
 
 func _ready() -> void:
 	slot_grid = $Panel/InventoryContainer/SlotGrid
+	
 	_populate_inventory_slots()
-	print(slot_grid.get_children())
 
 func _populate_inventory_slots(): 
 	for i in range(12):
@@ -75,3 +76,7 @@ func add_item(item):
 	if placed:
 		#emit a signal back to item_pickup gd to remove the item node
 		return
+
+func _input(Event: InputEvent) -> void:
+	if Event.is_action_pressed("Inventory"):
+		visible = !visible
