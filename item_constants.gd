@@ -1,3 +1,4 @@
+extends Node
 var large_potion = {
 	"sprite": "res://ASSETS/ART/ITEMS/large_health_potion.png",
 	"type": "healing",
@@ -64,3 +65,10 @@ var tomato = {
 	"amount": 100,
 	"stackable": true
 }
+func rand_item():
+	var rand = [large_potion, medium_potion, small_potion,
+	sword_1, sword_2, sword_3, sword_4,
+	carrot, tomato, potato, corn]
+	return rand[randi() % 11]
+	
+	
