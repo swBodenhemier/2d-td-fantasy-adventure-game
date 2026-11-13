@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cpjm3xmgt7glh"]
+
+[ext_resource type="Script" uid="uid://qpsv0cj75rgt" path="res://SCENES/INVENTORY/item.gd" id="1_yx613"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mo35u"]
+radius = 16.0
+
+[node name="Item" type="Sprite2D" unique_id=1489776633]
+script = ExtResource("1_yx613")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1470882896]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=310736273]
+shape = SubResource("CircleShape2D_mo35u")
