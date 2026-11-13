@@ -127,4 +127,6 @@ func take_damage(hitbox: Hitbox) -> void:
 	die()
 
 func die() -> void:
+	var cur_item = $"res://SCENES/INVENTORY/item.tscn".instantiate()
+	cur_item.set_item(ItemConstants.rand_item())
 	queue_free()
