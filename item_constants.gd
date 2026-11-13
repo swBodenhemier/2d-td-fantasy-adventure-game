@@ -40,3 +40,27 @@ var sword_4 = {
 	"amount": 100,
 	"stackable": false
 }
+var carrot = {
+	"sprite": "res://ASSETS/ART/ITEMS/carrot.png",
+	"type": "crop",
+	"amount": 50,
+	"stackable": true
+}
+var corn = {
+	"sprite": "res://ASSETS/ART/ITEMS/corn.png",
+	"type": "crop",
+	"amount": 75,
+	"stackable": true
+}
+var potato = {
+	"sprite": "res://ASSETS/ART/ITEMS/potato.png",
+	"type": "crop",
+	"amount": 25,
+	"stackable": true
+}
+var tomato = {
+	"sprite": "res://ASSETS/ART/ITEMS/tomato.png",
+	"type": "crop",
+	"amount": 100,
+	"stackable": true
+}
