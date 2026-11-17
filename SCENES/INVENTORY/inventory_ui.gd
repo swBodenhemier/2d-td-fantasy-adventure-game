@@ -80,3 +80,7 @@ func add_item(item):
 func _input(Event: InputEvent) -> void:
 	if Event.is_action_pressed("Inventory"):
 		visible = !visible
+
+
+func _on_visibility_changed() -> void:
+	get_tree().paused = visible

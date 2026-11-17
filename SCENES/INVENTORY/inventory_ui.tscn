@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://cwv4u4lxrmxaa" path="res://SCENES/INVENTORY/drop_button.gd" id="4_wmvpq"]
 
 [node name="InventoryUI" type="CanvasLayer" unique_id=1682690053]
+process_mode = 3
+visible = false
 script = ExtResource("1_kdc41")
 slot_scene = ExtResource("2_b5lxb")
 
@@ -55,3 +57,5 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "Drop Item"
 script = ExtResource("4_wmvpq")
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
