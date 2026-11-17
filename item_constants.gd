@@ -1,66 +1,77 @@
 var large_potion = {
 	"sprite": "res://ASSETS/ART/ITEMS/large_health_potion.png",
 	"type": "healing",
+	"id" : 0,
 	"amount": 100,
-	"stackable": true
+	"stackSize": 3
 }
 var medium_potion = {
 	"sprite": "res://ASSETS/ART/ITEMS/medium_health_potion.png",
 	"type": "healing",
+	"id": 1,
 	"amount": 50,
-	"stackable": true
+	"stackSize": 5
 }
 var small_potion = {
 	"sprite": "res://ASSETS/ART/ITEMS/small_health_potion.png",
 	"type": "healing",
+	"id": 2,
 	"amount": 25,
-	"stackable": true
+	"stackSize": 6
 }
 var sword_1 = {
 	"sprite": "res://ASSETS/ART/ITEMS/sword_1.png",
 	"type": "weapon",
+	"id": 3,
 	"amount": 25,
-	"stackable": false
+	"stackSize": 1
 }
 var sword_2 = {
 	"sprite": "res://ASSETS/ART/ITEMS/sword_2.png",
 	"type": "weapon",
+	"id": 4,
 	"amount": 50,
-	"stackable": false
+	"stackSize": 1
 }
 var sword_3 = {
 	"sprite": "res://ASSETS/ART/ITEMS/sword_3.png",
 	"type": "weapon",
+	"id": 5,
 	"amount": 75,
-	"stackable": false
+	"stackSize": 1
 }
 var sword_4 = {
 	"sprite": "res://ASSETS/ART/ITEMS/sword_4.png",
 	"type": "weapon",
+	"id": 6,
 	"amount": 100,
-	"stackable": false
+	"stackSize": 1
 }
 var carrot = {
 	"sprite": "res://ASSETS/ART/ITEMS/carrot.png",
 	"type": "crop",
+	"id": 7,
 	"amount": 50,
-	"stackable": true
+	"stackSize": 4
 }
 var corn = {
 	"sprite": "res://ASSETS/ART/ITEMS/corn.png",
 	"type": "crop",
+	"id": 8,
 	"amount": 75,
-	"stackable": true
+	"stackSize": 3
 }
 var potato = {
 	"sprite": "res://ASSETS/ART/ITEMS/potato.png",
 	"type": "crop",
+	"id": 9,
 	"amount": 25,
-	"stackable": true
+	"stackSize": 5
 }
 var tomato = {
 	"sprite": "res://ASSETS/ART/ITEMS/tomato.png",
 	"type": "crop",
+	"id": 10,
 	"amount": 100,
-	"stackable": true
+	"stackSize": 6
 }

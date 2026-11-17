@@ -7,7 +7,8 @@ func set_item(item: Dictionary):
 	this = {
 		"sprite": item["sprite"],
 		"type": item["type"],
+		"id": item["id"],
 		"amount": item["amount"],
-		"stackable": item["stackable"]
+		"stackSize": item["stackSize"]
 	}
 	
