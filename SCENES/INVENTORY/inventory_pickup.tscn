@@ -5,6 +5,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_xnlj0"]
 
 [node name="InventoryPickup" type="Area2D" unique_id=1752930476]
+collision_layer = 0
+collision_mask = 32
 script = ExtResource("1_hjms1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=588268459]
