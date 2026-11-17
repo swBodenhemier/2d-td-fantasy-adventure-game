@@ -4,6 +4,8 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+@export var item_scene: PackedScene
+
 @export_group("Movement")
 @export var patrol_speed: float = 40.0
 @export var chase_speed: float = 70.0
@@ -31,6 +33,8 @@ var _player: Node2D = null
 @onready var hurtbox: Hurtbox = $BlobHurtbox
 
 var screen_size: Vector2
+
+@export var spawner: Spawner
 
 func _ready():
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
@@ -127,6 +131,8 @@ func take_damage(hitbox: Hitbox) -> void:
 	die()
 
 func die() -> void:
-	var cur_item = $"res://SCENES/INVENTORY/item.tscn".instantiate()
+	var cur_item = item_scene.instantiate()
 	cur_item.set_item(ItemConstants.rand_item())
+	cur_item.position = position
+	spawner.get_parent().add_child(cur_item)
 	queue_free()

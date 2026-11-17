@@ -2,8 +2,10 @@ extends Sprite2D
 
 var this = {}
 
+var pickupable = false
+
 func set_item(item: Dictionary):
-	texture = item["sprite"]
+	texture = load(item["sprite"])
 	this = {
 		"sprite": item["sprite"],
 		"type": item["type"],
@@ -11,4 +13,10 @@ func set_item(item: Dictionary):
 		"amount": item["amount"],
 		"stackSize": item["stackSize"]
 	}
-	
+
+
+func _on_grace_period_timeout() -> void:
+	pickupable = true
+
+func _on_despawn_timer_timeout() -> void:
+	queue_free()
