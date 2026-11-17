@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bd8yp5jar8qxt" path="res://SCENES/ENEMIES/blob_monster.gd" id="1_3ign5"]
 [ext_resource type="Texture2D" uid="uid://dkr8r0bbfguhb" path="res://ASSETS/ART/CHARACTER AND CREATURE SPRITES/Slime_Blue.png" id="1_bcgfb"]
+[ext_resource type="PackedScene" uid="uid://cpjm3xmgt7glh" path="res://SCENES/INVENTORY/item.tscn" id="2_i0ixg"]
 [ext_resource type="Script" uid="uid://ducldktschn40" path="res://CLASSES/hitbox.gd" id="3_i0ixg"]
 [ext_resource type="Script" uid="uid://bf30rsiv3ktjk" path="res://CLASSES/hurtbox.gd" id="4_a05cx"]
 
@@ -122,9 +123,11 @@ size = Vector2(36, 24)
 size = Vector2(30, 20)
 
 [node name="BlobMonster" type="CharacterBody2D" unique_id=641095474]
+z_index = 50
 collision_layer = 4
 motion_mode = 1
 script = ExtResource("1_3ign5")
+item_scene = ExtResource("2_i0ixg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=89327072]
 position = Vector2(16, 8)

@@ -1,3 +1,4 @@
+class_name Spawner
 extends Node2D
 
 @export var blob_scene: PackedScene
@@ -34,6 +35,7 @@ func spawn_new_blob():
 	var random_marker = spawn_points.pick_random()
 	var new_blob = blob_scene.instantiate() as CharacterBody2D
 	new_blob.global_position = random_marker.global_position
+	new_blob.spawner = self
 	active_blobs.append(new_blob)
 	get_parent().add_child.call_deferred(new_blob)
 	trigger_spawn_juice(new_blob)
