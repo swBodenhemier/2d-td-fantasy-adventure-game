@@ -11,10 +11,15 @@ var placed =  false
 var number_slots = 12
 var inventory_pickup: InventoryPickup
 
+#signals
+signal try_pickup
+
 func _ready() -> void:
 	slot_grid = $Panel/InventoryContainer/SlotGrid
 	
 	_populate_inventory_slots()
+	print(slot_grid.get_children())
+	try_pickup.connect(add_item)
 
 func _populate_inventory_slots(): 
 	for i in range(12):
@@ -62,16 +67,16 @@ func search_for_empty_slot(item: Dictionary):
 func add_item(item):
 	#check whether the item is stackable or not
 			#if it is stackable
-	if item["stackSize != 1"]:
+	if item.this["stackSize != 1"]:
 	#Search each slot for a stackable item of the same type 
 	#use the boolean to handle the return					
 	#function: search_for_stackable()
-		placed = search_for_stackable(item)
+		placed = search_for_stackable(item.this)
 	#check if the item was not placed
 	if !placed:
 		#try adding the item to an empty slot and use the boolean to handle the return
 		#function: search_for_empty_slot()
-		placed = search_for_empty_slot(item)
+		placed = search_for_empty_slot(item.this)
 	#return the boolean variable
 	if placed:
 		#emit a signal back to item_pickup gd to remove the item node
@@ -84,3 +89,5 @@ func _input(Event: InputEvent) -> void:
 
 func _on_visibility_changed() -> void:
 	get_tree().paused = visible
+		item.queue_free()
+	
