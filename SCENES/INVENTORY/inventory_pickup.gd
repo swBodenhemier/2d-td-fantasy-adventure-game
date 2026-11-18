@@ -1,3 +1,4 @@
+class_name InventoryPickup
 extends Area2D
 
 # Called when the node enters the scene tree for the first time.
