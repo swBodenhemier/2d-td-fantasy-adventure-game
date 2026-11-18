@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @export var slot_scene: PackedScene
 
+var drop_button: Button
 var slot_grid: GridContainer
 var slots: Array[TextureButton] = []
 
@@ -15,6 +16,7 @@ signal inventory_changed
 
 func _ready() -> void:
 	slot_grid = $Panel/InventoryContainer/SlotGrid
+	drop_button = $Panel/InventoryContainer/DropButton
 	
 	_populate_inventory_slots()
 	print(slot_grid.get_children())
@@ -24,11 +26,15 @@ func _ready() -> void:
 
 func _populate_inventory_slots(): 
 	for i in range(12):
-		#initialize the slot to empty in the boolean array
+		#initialize the slot to empty in both its dictionary array and count array
 		slot_fill_array.append(0)
 		items_array.append({})
 		var instance = slot_scene.instantiate()
+		#connect the slots try_drop signal to the on_slot pressed function in the drop button
+		instance.try_drop.connect(drop_button._on_slot_pressed)
+		#append the instance to the slots array
 		slots.append(instance)
+		#add the slot as a child of the slot grid
 		slot_grid.add_child(instance)
 		
 func search_for_stackable(item: Dictionary):

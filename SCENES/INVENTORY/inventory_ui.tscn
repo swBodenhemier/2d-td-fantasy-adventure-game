@@ -51,7 +51,7 @@ mouse_filter = 2
 mouse_behavior_recursive = 1
 columns = 4
 
-[node name="DropButton" type="Button" parent="Panel/InventoryContainer" unique_id=1216806054]
+[node name="DropButton" type="Button" parent="Panel/InventoryContainer" unique_id=1216806054 groups=["drop_button"]]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
