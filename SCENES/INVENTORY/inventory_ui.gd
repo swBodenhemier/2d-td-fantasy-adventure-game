@@ -11,15 +11,16 @@ var placed =  false
 var number_slots = 12
 var inventory_pickup: InventoryPickup
 
-#signals
-signal try_pickup
+signal inventory_changed
 
 func _ready() -> void:
 	slot_grid = $Panel/InventoryContainer/SlotGrid
 	
 	_populate_inventory_slots()
 	print(slot_grid.get_children())
-	try_pickup.connect(add_item)
+	var pickup_node = get_node("../InventoryPickup")
+	pickup_node.connect("try_pickup", add_item)
+	inventory_changed.connect(_on_inventory_changed)
 
 func _populate_inventory_slots(): 
 	for i in range(12):
@@ -40,6 +41,7 @@ func search_for_stackable(item: Dictionary):
 				
 				slot_fill_array[i] += 1
 				#emit a signal to inventory_changed
+				inventory_changed.emit(i, slot_fill_array[i], items_array[i])
 				return true
 	return false
 
@@ -56,6 +58,7 @@ func search_for_empty_slot(item: Dictionary):
 			#increment the value
 			slot_fill_array[i] += 1
 			#emit a signal to inventory_changed
+			inventory_changed.emit(i, slot_fill_array[i], items_array[i])
 			#return true
 			return true
 	#return false
@@ -65,9 +68,10 @@ func search_for_empty_slot(item: Dictionary):
 #add the item to the inventory slot
 #function: add_item
 func add_item(item):
+	placed = false
 	#check whether the item is stackable or not
 			#if it is stackable
-	if item.this["stackSize != 1"]:
+	if item.this["stackSize"] != 1:
 	#Search each slot for a stackable item of the same type 
 	#use the boolean to handle the return					
 	#function: search_for_stackable()
@@ -79,8 +83,11 @@ func add_item(item):
 		placed = search_for_empty_slot(item.this)
 	#return the boolean variable
 	if placed:
-		#emit a signal back to item_pickup gd to remove the item node
-		return
+		item.queue_free()
+
+func _on_inventory_changed(changed_index: int, count: int, item:Dictionary):
+	slots[changed_index].get_child(0).texture = load(item["sprite"])
+	slots[changed_index].get_child(1).text = str(count)
 
 func _input(Event: InputEvent) -> void:
 	if Event.is_action_pressed("Inventory"):
@@ -89,5 +96,3 @@ func _input(Event: InputEvent) -> void:
 
 func _on_visibility_changed() -> void:
 	get_tree().paused = visible
-		item.queue_free()
-	
