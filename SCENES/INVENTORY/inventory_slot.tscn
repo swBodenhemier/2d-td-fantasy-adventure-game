@@ -6,10 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://badq88djbusje" path="res://ASSETS/ART/UI/UI_Flat_FrameSlot01a_Hovered.png" id="3_1qv4y"]
 [ext_resource type="Texture2D" uid="uid://doackmhvkdekr" path="res://ASSETS/ART/UI/UI_Flat_FrameSlot01c.png" id="3_nm7e4"]
 
+[sub_resource type="ButtonGroup" id="ButtonGroup_nm7e4"]
+resource_local_to_scene = false
+allow_unpress = true
+
 [node name="InventorySlot" type="TextureButton" unique_id=978835586]
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_behavior_recursive = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_nm7e4")
 texture_normal = ExtResource("1_c53gs")
 texture_pressed = ExtResource("2_m8ugb")
 texture_hover = ExtResource("3_1qv4y")
@@ -23,6 +29,9 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Count" type="Label" parent="." unique_id=122932182]
+modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

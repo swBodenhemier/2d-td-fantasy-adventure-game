@@ -1,7 +1,9 @@
 extends CanvasLayer
 
 @export var slot_scene: PackedScene
+@export var item_scene: PackedScene
 
+var drop_button: Button
 var slot_grid: GridContainer
 var slots: Array[TextureButton] = []
 
@@ -11,36 +13,58 @@ var placed =  false
 var number_slots = 12
 var inventory_pickup: InventoryPickup
 
+signal inventory_changed
+signal disable_button
+signal deselect_slot
+
 func _ready() -> void:
 	slot_grid = $Panel/InventoryContainer/SlotGrid
+	drop_button = $Panel/InventoryContainer/DropButton
 	
 	_populate_inventory_slots()
+	print(slot_grid.get_children())
+	var pickup_node = get_node("../InventoryPickup")
+	pickup_node.connect("try_pickup", add_item)
+	inventory_changed.connect(_on_inventory_changed)
+	disable_button.connect(drop_button.slot_emptied)
 
 func _populate_inventory_slots(): 
 	for i in range(12):
-		#initialize the slot to empty in the boolean array
+		#initialize the slot to empty in both its dictionary array and count array
 		slot_fill_array.append(0)
 		items_array.append({})
+		#create an instance of a slot scene
 		var instance = slot_scene.instantiate()
+		#connect the slots enable_button signal to the on_slot pressed function in the drop button
+		instance.enable_button.connect(drop_button._on_slot_pressed)
+		#connect the current slot signal to the inventory ui'sfunction drop item
+		instance.current_slot.connect(drop_item)
+		#connect the signal closed to the instance so the slot gets unselected
+		deselect_slot.connect(instance._on_toggled)
+		#append the instance to the slots array
 		slots.append(instance)
+		#add the slot as a child of the slot grid
 		slot_grid.add_child(instance)
 		
+#ADD ITEM FUNCTIONS
 func search_for_stackable(item: Dictionary):
 	#for each slot
 	for i in range(number_slots):
-		#Check if the target item matches the item in the slot and the current stack size is less 		
-		#than the stack limit of the item
+		#check if thetre is something in the current dictionary
 		if(!items_array[i].is_empty()):
+			#check if the item id is the same as the item in the current dictionary and check if the current stack size is less than the items max stack size
 			if(item["id"] == items_array[i]["id"] and slot_fill_array[i] < item["stackSize"]):
-				
+				#add 1 to the count array at the current slots position
 				slot_fill_array[i] += 1
 				#emit a signal to inventory_changed
+				inventory_changed.emit(i, slot_fill_array[i], items_array[i])
+				#return true
 				return true
+	#return false
 	return false
 
 
 #this function should take an item as an argument, run through each item slot until it finds and #empty slot to place the item and return true if the item was placed and false if there are no 
-
 func search_for_empty_slot(item: Dictionary):
 	#for each slot
 	for i in range(number_slots):
@@ -51,6 +75,7 @@ func search_for_empty_slot(item: Dictionary):
 			#increment the value
 			slot_fill_array[i] += 1
 			#emit a signal to inventory_changed
+			inventory_changed.emit(i, slot_fill_array[i], items_array[i])
 			#return true
 			return true
 	#return false
@@ -60,26 +85,92 @@ func search_for_empty_slot(item: Dictionary):
 #add the item to the inventory slot
 #function: add_item
 func add_item(item):
+	placed = false
 	#check whether the item is stackable or not
-			#if it is stackable
-	if item["stackSize != 1"]:
+	#if it is stackable
+	if item.this["stackSize"] != 1:
 	#Search each slot for a stackable item of the same type 
 	#use the boolean to handle the return					
 	#function: search_for_stackable()
-		placed = search_for_stackable(item)
+		placed = search_for_stackable(item.this)
 	#check if the item was not placed
 	if !placed:
 		#try adding the item to an empty slot and use the boolean to handle the return
 		#function: search_for_empty_slot()
-		placed = search_for_empty_slot(item)
+		placed = search_for_empty_slot(item.this)
 	#return the boolean variable
 	if placed:
-		#emit a signal back to item_pickup gd to remove the item node
-		return
+		#remove the item from the world
+		item.queue_free()
 
+#DROP ITEMS FUNCTIONS
+#this function should manage other functions involved in dropping teh item
+func drop_item(slot):
+	#get the index of the current slot
+	#function: find_index
+	var slot_index = find_index(slot)
+	#subtract 1 from the count at the index returned
+	slot_fill_array[slot_index] -= 1
+	#place the item back into the world
+	place_back_into_world(items_array[slot_index])
+	#check if the current count is now 0
+	if slot_fill_array[slot_index] == 0:
+		#clear the dictionary
+		items_array[slot_index] = {}
+	#emit a signal to inventory changed
+	inventory_changed.emit(slot_index, slot_fill_array[slot_index], items_array[slot_index])
+	
+#this function is involved in finding the index of a slot node
+func find_index(slot):
+	#for each slot
+	for i in range(number_slots):
+		#check if the slot matched the current slot
+		if slot == slots[i]:
+			#return the index
+			return i
+
+#this function should handle placing the items back into the world taking a dictionary as an argument
+func place_back_into_world(item: Dictionary):
+	#instantiate an item scene
+	var dropped_item = item_scene.instantiate()
+	#set the items content to the passed dictionary
+	dropped_item.set_item(item)
+	#set the items position to the players position
+	dropped_item.position = get_parent().position
+	#add the node as a child of the mainGameLevel node
+	get_parent().get_parent().add_child(dropped_item)
+
+#this fujnction should handle changing the display of the inventory, updating when a slot has changed
+func _on_inventory_changed(changed_index: int, count: int, item:Dictionary):
+	#check if the item count is 1
+	if count == 1:	
+		#check if the there is nothing assigned to the slots ItemIcon texture
+		if slots[changed_index].get_child(0).texture == null:
+			#assign the slots ItemIcon texture to the picked up item's sprite
+			slots[changed_index].get_child(0).texture = load(item["sprite"])
+		#set the count lable to empty
+		slots[changed_index].get_child(1).text = ""
+	#otherwise if the item count is greater than 1
+	elif count > 1:
+		#set the lable's text to the count
+		slots[changed_index].get_child(1).text = str(count)
+	#otherwise the slot has hit 0
+	else:
+		#set the ItemIcon texture to null
+		slots[changed_index].get_child(0).texture = null
+		#emit a signal back to the selected slot to untoggle it
+		deselect_slot.emit(false)
+		#emit a signal back to the drop button to disable it
+		disable_button.emit()
+		
+#INVENTORY VISABILLITY FUNCTIONS
 func _input(Event: InputEvent) -> void:
 	if Event.is_action_pressed("Inventory"):
 		visible = !visible
+		#deslect the slot
+		deselect_slot.emit(false)
+		#disable the drop button again
+		disable_button.emit()
 
 
 func _on_visibility_changed() -> void:
