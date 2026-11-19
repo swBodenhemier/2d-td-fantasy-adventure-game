@@ -16,10 +16,13 @@ func _on_slot_pressed(slot):
 	else:
 		disabled = true
 
+#this function disables the drop button when a slot is emptied
 func slot_emptied():
+	#set the disabled variable to true
 	disabled = true
 
+#this function handles dropping an item when the srop button is pressed
 func _on_pressed() -> void:
-	#emit the signal to try drop
+	#emit the signal to try drop to the slot script
 	try_drop.emit()
 	

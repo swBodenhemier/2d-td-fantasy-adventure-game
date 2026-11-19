@@ -9,7 +9,9 @@ signal try_pickup
 			  #try adding the item to the inventory slot by using the function add_item()
 	#if the item was added delete the item node from the world
 func _on_area_entered(area: Area2D) -> void:
+	#check if the area is of class Item
 	if area.get_parent() is Item:
-		#emit a signal to item Pickup
+		#check if the item is pickupable
 		if area.get_parent().pickupable:
+			#emit a signal with the item node
 			try_pickup.emit(area.get_parent())
