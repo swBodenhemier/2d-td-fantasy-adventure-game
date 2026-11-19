@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://y4yhvejtdks0" path="res://SCENES/INVENTORY/inventory_ui.gd" id="1_kdc41"]
 [ext_resource type="PackedScene" uid="uid://dvhl6skqkf6jq" path="res://SCENES/INVENTORY/inventory_slot.tscn" id="2_b5lxb"]
+[ext_resource type="PackedScene" uid="uid://cpjm3xmgt7glh" path="res://SCENES/INVENTORY/item.tscn" id="3_wmvpq"]
 [ext_resource type="Texture2D" uid="uid://bnwab4x74kgwn" path="res://ASSETS/ART/UI/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thick outline/tile_0030.png" id="4_kugwh"]
 [ext_resource type="Script" uid="uid://cwv4u4lxrmxaa" path="res://SCENES/INVENTORY/drop_button.gd" id="4_wmvpq"]
 
@@ -10,6 +11,7 @@ process_mode = 3
 visible = false
 script = ExtResource("1_kdc41")
 slot_scene = ExtResource("2_b5lxb")
+item_scene = ExtResource("3_wmvpq")
 
 [node name="Panel" type="NinePatchRect" parent="." unique_id=1626402545]
 anchors_preset = 8

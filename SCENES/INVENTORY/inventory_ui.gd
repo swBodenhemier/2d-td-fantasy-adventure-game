@@ -119,7 +119,10 @@ func find_index(slot):
 			return i
 			
 func place_back_into_world(item: Dictionary):
-	pass
+	var dropped_item = item_scene.instantiate()
+	dropped_item.set_item(item)
+	dropped_item.position = get_parent().position
+	get_parent().get_parent().add_child(dropped_item)
 
 func _on_inventory_changed(changed_index: int, count: int, item:Dictionary):
 	if count == 1:	
