@@ -59,3 +59,4 @@ text = "Drop Item"
 script = ExtResource("4_wmvpq")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Panel/InventoryContainer/DropButton" to="Panel/InventoryContainer/DropButton" method="_on_pressed"]
