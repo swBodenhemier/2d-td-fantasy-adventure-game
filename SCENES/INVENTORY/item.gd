@@ -12,9 +12,13 @@ func set_item(item: Dictionary):
 		"sprite": item["sprite"],
 		"type": item["type"],
 		"id": item["id"],
+		"count": 1,
 		"amount": item["amount"],
 		"stackSize": item["stackSize"]
 	}
+	
+func set_count(item: Dictionary):
+	this["count"] = item["count"]
 
 
 func _on_grace_period_timeout() -> void:
