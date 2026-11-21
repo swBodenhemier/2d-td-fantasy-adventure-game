@@ -1,4 +1,4 @@
-extends Sprite2D
+extends CharacterBody2D
 
 class_name Item
 
@@ -7,7 +7,7 @@ var this = {}
 var pickupable = false
 
 func set_item(item: Dictionary):
-	texture = load(item["sprite"])
+	get_node("Sprite2D").texture = load(item["sprite"])
 	this = {
 		"sprite": item["sprite"],
 		"type": item["type"],

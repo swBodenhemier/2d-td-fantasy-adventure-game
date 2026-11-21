@@ -2,12 +2,20 @@
 
 [ext_resource type="Script" uid="uid://qpsv0cj75rgt" path="res://SCENES/INVENTORY/item.gd" id="1_yx613"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6dp6g"]
+radius = 16.03122
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_mo35u"]
 radius = 16.0
 
-[node name="Item" type="Sprite2D" unique_id=1489776633]
+[node name="Item" type="CharacterBody2D" unique_id=672881193]
 z_index = 10
 script = ExtResource("1_yx613")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1103298870]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=822453357]
+shape = SubResource("CircleShape2D_6dp6g")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1470882896]
 collision_layer = 32
