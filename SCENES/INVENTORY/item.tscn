@@ -17,6 +17,7 @@ collision_mask = 32
 shape = SubResource("CircleShape2D_mo35u")
 
 [node name="GracePeriod" type="Timer" parent="." unique_id=1694059217]
+wait_time = 0.1
 one_shot = true
 autostart = true
 
