@@ -6,6 +6,11 @@ var this = {}
 
 var pickupable = false
 
+func _physics_process(delta: float) -> void:
+	move_and_slide()
+	velocity -= velocity * delta * 2
+	
+
 func set_item(item: Dictionary):
 	get_node("Sprite2D").texture = load(item["sprite"])
 	this = {
