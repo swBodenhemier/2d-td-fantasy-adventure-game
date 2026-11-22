@@ -1,4 +1,4 @@
-extends Sprite2D
+extends CharacterBody2D
 
 class_name Item
 
@@ -6,15 +6,24 @@ var this = {}
 
 var pickupable = false
 
+func _physics_process(delta: float) -> void:
+	move_and_slide()
+	velocity -= velocity * delta * 2
+	
+
 func set_item(item: Dictionary):
-	texture = load(item["sprite"])
+	get_node("Sprite2D").texture = load(item["sprite"])
 	this = {
 		"sprite": item["sprite"],
 		"type": item["type"],
 		"id": item["id"],
+		"count": 1,
 		"amount": item["amount"],
 		"stackSize": item["stackSize"]
 	}
+	
+func set_count(item: Dictionary):
+	this["count"] = item["count"]
 
 
 func _on_grace_period_timeout() -> void:

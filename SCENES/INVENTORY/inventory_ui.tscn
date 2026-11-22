@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cpjm3xmgt7glh" path="res://SCENES/INVENTORY/item.tscn" id="3_wmvpq"]
 [ext_resource type="Texture2D" uid="uid://bnwab4x74kgwn" path="res://ASSETS/ART/UI/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thick outline/tile_0030.png" id="4_kugwh"]
 [ext_resource type="Script" uid="uid://cwv4u4lxrmxaa" path="res://SCENES/INVENTORY/drop_button.gd" id="4_wmvpq"]
+[ext_resource type="Script" uid="uid://cas3m5h2t5ayt" path="res://SCENES/INVENTORY/drop_stack.gd" id="6_m2h0r"]
 
 [node name="InventoryUI" type="CanvasLayer" unique_id=1682690053]
 process_mode = 3
@@ -20,11 +21,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -81.5
-offset_top = -95.375
+offset_top = -171.0
 offset_right = 81.5
-offset_bottom = 95.375
+offset_bottom = 80.93622
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.2283485, 1.2359807)
 texture = ExtResource("4_kugwh")
 region_rect = Rect2(0, 0, 32, 32)
 patch_margin_left = 12
@@ -60,5 +62,13 @@ size_flags_vertical = 8
 text = "Drop Item"
 script = ExtResource("4_wmvpq")
 
+[node name="DropStackButton" type="Button" parent="Panel/InventoryContainer" unique_id=281009492 groups=["drop_button"]]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Drop Stack"
+script = ExtResource("6_m2h0r")
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="Panel/InventoryContainer/DropButton" to="Panel/InventoryContainer/DropButton" method="_on_pressed"]
+[connection signal="pressed" from="Panel/InventoryContainer/DropStackButton" to="Panel/InventoryContainer/DropStackButton" method="_on_pressed"]
