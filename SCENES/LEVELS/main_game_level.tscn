@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://o4duvy8w6e18" path="res://ASSETS/ART/BACKGROUNDS/grass_tile.jpg" id="4_f1jnw"]
 [ext_resource type="PackedScene" uid="uid://3m57s1ut1yu2" path="res://SCENES/ENEMIES/blob_spawner.tscn" id="4_ys2ra"]
 
-[node name="MainGameLevel" type="Node2D" unique_id=407925075 groups=["Level"]]
+[node name="MainGameLevel" type="Node2D" unique_id=407925075]
 
 [node name="LevelBackground" type="TextureRect" parent="." unique_id=1622687349]
 z_index = -10
