@@ -747,5 +747,12 @@ shape = SubResource("RectangleShape2D_xnlj0")
 
 [node name="InventoryUI" parent="." unique_id=1682690053 instance=ExtResource("7_wb3nm")]
 
+[node name="DeathDialog" type="ConfirmationDialog" parent="." unique_id=15006529]
+title = "You Died!"
+ok_button_text = "Restart"
+cancel_button_text = "Main Menu"
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="PlayerHurtBox" to="PlayerHurtBox" method="_on_area_entered"]
+[connection signal="canceled" from="DeathDialog" to="." method="_on_death_dialog_canceled"]
+[connection signal="confirmed" from="DeathDialog" to="." method="_on_death_dialog_confirmed"]
