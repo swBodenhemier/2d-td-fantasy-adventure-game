@@ -6,8 +6,6 @@ var this = {}
 
 var pickupable = false
 
-var time_elapsed = 0.0
-
 func _physics_process(delta: float) -> void:
 	if velocity != Vector2.ZERO and velocity.x <= 1 and velocity.y <= 1:
 		velocity = Vector2.ZERO

@@ -35,7 +35,6 @@ project/assembly_name="2D TD Fantasy Adventure Game"
 Player=""
 blobs=""
 Hurtbox=""
-Level=""
 
 [input]
 
