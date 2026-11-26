@@ -5,14 +5,14 @@ class_name Item
 var this = {}
 
 var pickupable = false
-var anchor_point = null
+
+var time_elapsed = 0.0
 
 func _physics_process(delta: float) -> void:
-	if velocity.x <= 1 and velocity.y <= 1:
+	if velocity != Vector2.ZERO and velocity.x <= 1 and velocity.y <= 1:
 		velocity = Vector2.ZERO
-		if anchor_point == null:
-			anchor_point = position
-		position.y = sin($DespawnTimer.time_left * 2) * 4 + anchor_point.y
+	$Sprite2D.position.y = sin($DespawnTimer.time_left * 2) * 4
+	$Shadow.scale.x = 1 + (sin($DespawnTimer.time_left * 2) / 4)
 	move_and_slide()
 	velocity -= velocity * delta * 2
 	

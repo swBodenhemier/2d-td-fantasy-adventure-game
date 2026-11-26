@@ -122,6 +122,16 @@ size = Vector2(36, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnlj0"]
 size = Vector2(30, 20)
 
+[sub_resource type="Gradient" id="Gradient_yx613"]
+colors = PackedColorArray(0, 0, 0, 0.39215687, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i0ixg"]
+gradient = SubResource("Gradient_yx613")
+width = 48
+height = 16
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="BlobMonster" type="CharacterBody2D" unique_id=641095474]
 z_index = 50
 collision_layer = 4
@@ -168,5 +178,10 @@ script = ExtResource("4_a05cx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlobHurtbox" unique_id=466498045]
 position = Vector2(16, 11)
 shape = SubResource("RectangleShape2D_xnlj0")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=182653113]
+z_index = -1
+position = Vector2(16, 21)
+texture = SubResource("GradientTexture2D_i0ixg")
 
 [connection signal="area_entered" from="BlobHitbox" to="BlobHitbox" method="_on_area_entered"]
