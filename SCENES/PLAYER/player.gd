@@ -79,12 +79,16 @@ func heal(amount: int):
 func update_direction(input_direction):
 	if input_direction.x < 0:
 		last_direction = "left"
+		$PlayerHitBox/CollisionShape2D.position = Vector2(-12, 0)
 	elif input_direction.x > 0:
 		last_direction = "right"
+		$PlayerHitBox/CollisionShape2D.position = Vector2(12, 0)
 	elif input_direction.y < 0:
 		last_direction = "up"
+		$PlayerHitBox/CollisionShape2D.position = Vector2(0, -12)
 	elif input_direction.y > 0:
 		last_direction = "down"
+		$PlayerHitBox/CollisionShape2D.position = Vector2(0, 12)
 
 func update_movement_direction(input_direction):
 	if input_direction == Vector2.ZERO:
@@ -108,6 +112,8 @@ func play_action_animation(action_name):
 
 func die():
 	play_action_animation("die")
+	await get_tree().create_timer(2).timeout
+	$DeathDialog.popup_centered()
 
 func _unhandled_input(event):
 	if event.is_action_pressed("attack") and current_health > 0:
@@ -122,3 +128,10 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		animated_sprite.play("dead_" + last_direction)
 	else:
 		is_action_playing = false
+
+
+func _on_death_dialog_canceled() -> void:
+	get_tree().change_scene_to_file("res://SCENES/UI/start_screen.tscn")
+
+func _on_death_dialog_confirmed() -> void:
+	get_tree().change_scene_to_file("res://SCENES/LEVELS/main_game_level.tscn")

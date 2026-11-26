@@ -127,15 +127,13 @@ func _on_hit_landed(_target: Node2D) -> void:
 	if state == State.CHASE:
 		_chase_timer = give_up_time
 
-func take_damage(hitbox: Hitbox) -> void:
+func take_damage(_hitbox: Hitbox) -> void:
 	die()
 
 func die() -> void:
 	var cur_item = item_scene.instantiate()
 	cur_item.set_item(ItemConstants.rand_item())
 	cur_item.position = position
-	print(velocity)
 	cur_item.velocity = velocity * -1
-	print(cur_item.velocity)
 	spawner.get_parent().add_child(cur_item)
 	queue_free()

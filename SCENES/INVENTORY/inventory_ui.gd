@@ -21,7 +21,6 @@ func _ready() -> void:
 	drop_button = $Panel/InventoryContainer/DropButton
 	
 	_populate_inventory_slots()
-	print(slot_grid.get_children())
 	var pickup_node = get_node("../InventoryPickup")
 	pickup_node.connect("try_pickup", add_item)
 	inventory_changed.connect(_on_inventory_changed)
@@ -54,10 +53,14 @@ func search_for_stackable(item: Dictionary):
 		if(!items_array[i].is_empty()):
 			#check if the item id is the same as the item in the current dictionary and check if the current stack size is less than the items max stack size
 			if(item["id"] == items_array[i]["id"] and items_array[i]["count"] < item["stackSize"]):
+				var new_count = items_array[i]["count"] + item["count"]
 				#add 1 to the count array at the current slots position
-				items_array[i]["count"] += item["count"]
+				items_array[i]["count"] = item["stackSize"] if new_count > item["stackSize"] else new_count
 				#emit a signal to inventory_changed
 				inventory_changed.emit(i, items_array[i]["count"], items_array[i])
+				if new_count > item["stackSize"]:
+					item["count"] = new_count - item["stackSize"]
+					return search_for_stackable(item)
 				#return true
 				return true
 	#return false
