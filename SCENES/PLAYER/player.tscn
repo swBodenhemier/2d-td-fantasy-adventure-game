@@ -707,7 +707,7 @@ radius = 8.0
 height = 21.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnlj0"]
-size = Vector2(40, 24.5)
+size = Vector2(32, 32)
 
 [node name="Player" type="CharacterBody2D" unique_id=435346633]
 z_index = 100
@@ -740,7 +740,7 @@ script = ExtResource("5_p47bc")
 triggered = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitBox" unique_id=588295669]
-position = Vector2(0, -0.25)
+position = Vector2(12, 0)
 shape = SubResource("RectangleShape2D_xnlj0")
 
 [node name="InventoryPickup" parent="." unique_id=1752930476 instance=ExtResource("6_wwbn8")]

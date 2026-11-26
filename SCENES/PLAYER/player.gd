@@ -79,12 +79,16 @@ func heal(amount: int):
 func update_direction(input_direction):
 	if input_direction.x < 0:
 		last_direction = "left"
+		$PlayerHitBox/CollisionShape2D.position = Vector2(-12, 0)
 	elif input_direction.x > 0:
 		last_direction = "right"
+		$PlayerHitBox/CollisionShape2D.position = Vector2(12, 0)
 	elif input_direction.y < 0:
 		last_direction = "up"
+		$PlayerHitBox/CollisionShape2D.position = Vector2(0, -12)
 	elif input_direction.y > 0:
 		last_direction = "down"
+		$PlayerHitBox/CollisionShape2D.position = Vector2(0, 12)
 
 func update_movement_direction(input_direction):
 	if input_direction == Vector2.ZERO:

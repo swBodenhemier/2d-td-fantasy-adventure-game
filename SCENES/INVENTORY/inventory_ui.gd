@@ -21,7 +21,6 @@ func _ready() -> void:
 	drop_button = $Panel/InventoryContainer/DropButton
 	
 	_populate_inventory_slots()
-	print(slot_grid.get_children())
 	var pickup_node = get_node("../InventoryPickup")
 	pickup_node.connect("try_pickup", add_item)
 	inventory_changed.connect(_on_inventory_changed)
